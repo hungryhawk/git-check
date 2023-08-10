@@ -129,6 +129,8 @@ b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unbor
 
 # git remote remove paul - удалить удаленный репозиторий
 
+# git tag -l - посмотреть все теги существующие
 
+# git tag -a v1.4 -m "my version 1.4" - создать tag 
 
 
