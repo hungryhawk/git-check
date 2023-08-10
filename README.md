@@ -240,3 +240,9 @@ set an email address that will be associated with each history marker
 git config --global color.ui auto
 set automatic command line coloring for Git for e
 
+# git log branchB..branchA - show the commits on branchA that are not on branchB
+
+git log --follow [file] - show the commits that changed file, even across renames
+
+git diff branchB...branchA - show the diff of what is in branchA that is not in branchB
+
