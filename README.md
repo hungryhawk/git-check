@@ -346,3 +346,32 @@ $ git merge --no-ff <other_branch>
 
 reversing changes: 
 
+Undo the latest commit but leave the working directory unchanged
+$ git reset HEAD~1
+
+You can undo as many commits as you want by changing the number after the tilde.
+
+Discard all changes of the latest commit (no easy recovery)
+$ git reset --hard HEAD~1
+
+Instead of HEAD~n, you can provide commit hash as well. Changes after that commit will be destroyed.
+
+A very useful feature of the git clone is that it allows cloning a specific branch of the target repository without having to clone the entire repository.
+To clone a specific branch, you need to use the command -b to specify the branch. The following command is used:
+
+git clone -b <Branch_name> <Repo_URL>
+
+Drop Stash
+
+In case, you no longer require a stash, you can delete it with the following command:
+
+git stash drop <stash_id>
+If you want to delete all the stashes, simply use:
+
+git stash clear
+
+svjsdsdjvlsdnv
+sdvljsdv'jsdnl
+dsvlknsd'klv
+sdv'klnds'klv
+
