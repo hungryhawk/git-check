@@ -405,3 +405,17 @@ git merge --no-ff – Creates a merge commit instead of attempting a fast-forwar
 Добавляет немного цвета в вывод команды git
 
 git config --global color.ui auto
+
+Meanwhile, the following command will delete a connection to a specified remote repository:
+git remote rm <name-of-the-repository>
+
+gitk shows the graphical interface for a local repository. Simply run:
+gitk
+
+git blame README.md - show all commits of the file
+
+git clone –branch <branch_name> <repository_url>	Clones a specific branch from a repository.
+
+
+
+
