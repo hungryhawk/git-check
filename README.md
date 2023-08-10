@@ -344,3 +344,5 @@ $ git branch -a  (shows remote branches as well)
 Merging a branch and creating a commit message
 $ git merge --no-ff <other_branch>
 
+reversing changes: 
+
