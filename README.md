@@ -80,6 +80,7 @@
 # rm script.js - когда он не проиндексирован (без git add script.js)
 
 # git restore --staged script.js => rm script.js - когда он был проиндексирован (с git add script.js)
+# git reset HEAD <имя файла>
 
 # git log -p -1 - посмотреть изменени, которые были сделаны в прошлом коммите
 
@@ -119,5 +120,15 @@ b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unbor
 
 # мы сделали коммит локально но хотим изменить или название коммита или содержание ?
 # меняем код, который нужно изменить => git add . => git commit --amend => переходим в редактор => меняем название коммита => press Esc => :wq => press Enter
+
+# git remote show origin - показаать информацию об удаленном репозиториии
+
+# git remote add  https://github.com/paulboone/ticgit - добавление удаленного репозитория
+
+# git remote rename origin paul - поменять название удаленного репозитория с origin на paul 
+
+# git remote remove paul - удалить удаленный репозиторий
+
+
 
 
