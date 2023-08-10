@@ -26,4 +26,16 @@
 
 # git checkout <имя файла> - убрать изменения на стадии modified из определенного файла
 # git checkout . - убрать изменения на стадии modified из всех файлов
- 
+ asdfgasdf
+
+ das
+ fasd
+ f
+ sda
+ f
+ asd
+ f
+ sad
+ f
+ asdf
+ as
