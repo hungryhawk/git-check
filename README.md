@@ -133,4 +133,10 @@ b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unbor
 
 # git tag -a v1.4 -m "my version 1.4" - создать tag 
 
+# git show v1.4 - посмотреть данные о теге
+
+# git tag -a v1.2 -m 'add new tag' 12130cf - создать тег на определенном коммите
+
+# git tag -d v1.2 - удалить определенный тег по названию 
+
 
