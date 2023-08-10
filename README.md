@@ -117,4 +117,7 @@ b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unbor
 
 <!-- ------------------ -->
 
+# мы сделали коммит локально но хотим изменить или название коммита или содержание ?
+# меняем код, который нужно изменить => git add . => git commit --amend => переходим в редактор => меняем название коммита => press Esc => :wq => press Enter
+
 
