@@ -15,8 +15,8 @@
 # git checkout README.md - откатиться к изменениям последнего коммита (если мы просто изменили файл)
 
 # git restore --staged README.md - откатиться к фазе modified (красным цветом) (если мы нажали git add README.md) а затем можем прописать git checkout README.md
-# git reset === равно верхнему случаю
 
+# git reset === равно верхнему случаю
 
 # git branch -v - посмотреть последний коммит в ветке
 
@@ -255,5 +255,20 @@ git diff branchB...branchA - show the diff of what is in branchA that is not in 
 
 git reset --hard - Reset staging area and working directory to match most recent commit and overwrites all changes in the working directory.
 
+The command below returns a list of information about your git configuration including user name and email:
 
-svkj;s;ckjfns'kld'knf;kbnsfjn'snfk'l
+git config -l
+
+With the command below you can configure your user name:
+
+git config --global user.name "Fabio"
+
+This command lets you setup the user email address you'll use in your commits.
+
+git config --global user.email "signups@fabiopacifici.com"
+
+How to add only certain files to the staging area in Git
+With the asterisk in the command below, you can add all files starting with 'fil' in the staging area.
+
+git add fil*
+
