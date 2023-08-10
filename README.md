@@ -71,3 +71,7 @@
 # git status -s - показать статус в коротком виде
 
 # git diff - показать подробнее какие произошли изменения (без добавления git add .)
+
+# git diff --staged / git diff --cached - показать подробнее какие произошли изменения (c добавления git add .)
+
+# git commit -a -m 'new message' - две команды в одной git add . + git commit -m 'new message'
