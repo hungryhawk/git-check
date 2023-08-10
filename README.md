@@ -313,3 +313,31 @@ $ git remote rm <remote>
 
 Rename a remote connection
 $ git remote rename <old_name> <new_name>
+
+
+Editing the message of the latest commit
+$ git commit --amend -m “[New commit message]”
+
+Saving staged and unstaged changes to stash for a later use (see below for the explanation of a stash)
+$ git stash
+
+Stashing staged, unstaged and untracked files as well
+$ git stash -u
+
+Stashing everything (including ignored files)
+$ git stash --all
+
+Reapply previously stashed changes and empty the stash
+$ git stash pop
+
+Reapply previously stashed changes and keep the stash
+$ git stash apply
+
+Dropping changes in the stash
+$ git stash drop
+
+Show the differences between two commits (should provide the commit IDs)
+$ git diff <id_1> <id_2>
+
+$ git branch -a  (shows remote branches as well)
+
