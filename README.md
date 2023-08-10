@@ -246,5 +246,3 @@ git log --follow [file] - show the commits that changed file, even across rename
 
 git diff branchB...branchA - show the diff of what is in branchA that is not in branchB
 
-fsk;jdb;kjsd;ksj'dljns;jfn;skd
-
