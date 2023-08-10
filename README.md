@@ -77,9 +77,11 @@
 # git commit -a -m 'new message' - две команды в одной git add . + git commit -m 'new message'
 
 когда мы хотим удалить файл
+
 # rm script.js - когда он не проиндексирован (без git add script.js)
 
 # git restore --staged script.js => rm script.js - когда он был проиндексирован (с git add script.js)
+
 # git reset HEAD <имя файла>
 
 # git log -p -1 - посмотреть изменени, которые были сделаны в прошлом коммите
@@ -103,13 +105,12 @@ $ git log -S function_name
 
 $ git log -- path/to/file
 
-
 Например, если вы хотите увидеть, в каких коммитах произошли изменения в тестовых файлах в исходном коде Git в октябре 2008 года, автором которых был Junio Hamano и которые не были коммитами слияния, вы можете запустить следующую команду:
 
 $ git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \
-   --before="2008-11-01" --no-merges -- t/
+ --before="2008-11-01" --no-merges -- t/
 5610e3b - Fix testcase failure when extended attributes are in use
-acd3b9e - Enhance hold_lock_file_for_{update,append}() API
+acd3b9e - Enhance hold*lock_file_for*{update,append}() API
 f563754 - demonstrate breakage of detached checkout with symbolic link HEAD
 d1a43f2 - reset --hard/read-tree --reset -u: remove unmerged new paths
 51a94af - Fix "checkout --track -b newbranch" on detached HEAD
@@ -119,19 +120,20 @@ b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unbor
 <!-- ------------------ -->
 
 # мы сделали коммит локально но хотим изменить или название коммита или содержание ?
+
 # меняем код, который нужно изменить => git add . => git commit --amend => переходим в редактор => меняем название коммита => press Esc => :wq => press Enter
 
 # git remote show origin - показаать информацию об удаленном репозиториии
 
-# git remote add  https://github.com/paulboone/ticgit - добавление удаленного репозитория
+# git remote add https://github.com/paulboone/ticgit - добавление удаленного репозитория
 
-# git remote rename origin paul - поменять название удаленного репозитория с origin на paul 
+# git remote rename origin paul - поменять название удаленного репозитория с origin на paul
 
 # git remote remove paul - удалить удаленный репозиторий
 
 # git tag -l - посмотреть все теги существующие
 
-# git tag -a v1.4 -m "my version 1.4" - создать tag 
+# git tag -a v1.4 -m "my version 1.4" - создать tag
 
 Обмен тегами
 По умолчанию, команда git push не отправляет теги на удалённые сервера. После создания теги нужно отправлять явно на удалённый сервер. Процесс аналогичен отправке веток — достаточно выполнить команду git push origin <tagname>.
@@ -143,23 +145,27 @@ Compressing objects: 100% (12/12), done.
 Writing objects: 100% (14/14), 2.05 KiB | 0 bytes/s, done.
 Total 14 (delta 3), reused 0 (delta 0)
 To git@github.com:schacon/simplegit.git
- * [new tag]         v1.5 -> v1.5
-Если у вас много тегов, и вам хотелось бы отправить все за один раз, то можно использовать опцию --tags для команды git push. В таком случае все ваши теги отправятся на удалённый сервер (если только их уже там нет).
+
+- [new tag] v1.5 -> v1.5
+  Если у вас много тегов, и вам хотелось бы отправить все за один раз, то можно использовать опцию --tags для команды git push. В таком случае все ваши теги отправятся на удалённый сервер (если только их уже там нет).
 
 $ git push origin --tags
 Counting objects: 1, done.
 Writing objects: 100% (1/1), 160 bytes | 0 bytes/s, done.
 Total 1 (delta 0), reused 0 (delta 0)
 To git@github.com:schacon/simplegit.git
- * [new tag]         v1.4 -> v1.4
- * [new tag]         v1.4-lw -> v1.4-lw
-Теперь, если кто-то клонирует (clone) или выполнит git pull из вашего репозитория, то он получит вдобавок к остальному и ваши метки.
+
+- [new tag] v1.4 -> v1.4
+- [new tag] v1.4-lw -> v1.4-lw
+  Теперь, если кто-то клонирует (clone) или выполнит git pull из вашего репозитория, то он получит вдобавок к остальному и ваши метки.
+
+  <!-- ----------------- -->
 
 # git show v1.4 - посмотреть данные о теге
 
 # git tag -a v1.2 -m 'add new tag' 12130cf - создать тег на определенном коммите
 
-# git tag -d v1.2 - удалить определенный тег по названию 
+# git tag -d v1.2 - удалить определенный тег по названию
 
 Обратите внимание, что при удалении тега не происходит его удаления с внешних серверов. Существует два способа изъятия тега из внешнего репозитория.
 
@@ -167,13 +173,13 @@ To git@github.com:schacon/simplegit.git
 
 $ git push origin :refs/tags/v1.4-lw
 To /git@github.com:schacon/simplegit.git
- - [deleted]         v1.4-lw
-Это следует понимать как обновление внешнего тега пустым значением, что приводит к его удалению.
+
+- [deleted] v1.4-lw
+  Это следует понимать как обновление внешнего тега пустым значением, что приводит к его удалению.
 
 Второй способ убрать тег из внешнего репозитория более интуитивный:
 
 $ git push origin --delete <tagname>
-
 
 Как откатиться на определенный коммит и от него создать ветку?
 
@@ -182,6 +188,7 @@ $ git push origin --delete <tagname>
 # git checkout -b <имя ветки> - создаем ветку и переходим к ней
 
 # Псевдонимы в Git
+
 Прежде, чем закончить эту главу по основам Git, рассмотрим ещё одну маленькую хитрость, которая поможет сделать использование Git проще, легче, и более привычным: псевдонимы (aliases). Мы не будем ссылаться на них дальше или предполагать, что вы будете пользоваться ими по ходу чтения книги, но вам лучше было бы знать, как их использовать.
 
 Git не будет пытаться сделать вывод о том, какую команду вы хотели ввести, если вы ввели её не полностью. Если вы не хотите печатать каждую команду для Git целиком, вы легко можете настроить псевдонимы (alias) для любой команды с помощью git config. Вот несколько примеров псевдонимов, которые вы, возможно, захотите задать:
@@ -207,11 +214,28 @@ $ git config --global alias.last 'log -1 HEAD'
 $ git last
 commit 66938dae3329c7aebe598c2246a8e6af90d04646
 Author: Josh Goebel <dreamer3@example.com>
-Date:   Tue Aug 26 19:48:51 2008 +0800
+Date: Tue Aug 26 19:48:51 2008 +0800
 
     Test for current head
 
     Signed-off-by: Scott Chacon <schacon@example.com>
 
-%  --------------------
+% --------------------
+# git stash -
 
+# git stash list
+
+# git stash apply
+
+# git stash drop
+
+# git config --global core.editor "code --wait" - visual studio code with git
+
+# git help 
+
+git config --global user.name “[firstname lastname]”
+set a name that is identifiable for credit when review version history
+git config --global user.email “[valid-email]”
+set an email address that will be associated with each history marker
+git config --global color.ui auto
+set automatic command line coloring for Git for e
