@@ -221,6 +221,7 @@ Date: Tue Aug 26 19:48:51 2008 +0800
     Signed-off-by: Scott Chacon <schacon@example.com>
 
 % --------------------
+
 # git stash -
 
 # git stash list
@@ -231,7 +232,7 @@ Date: Tue Aug 26 19:48:51 2008 +0800
 
 # git config --global core.editor "code --wait" - visual studio code with git
 
-# git help 
+# git help
 
 git config --global user.name “[firstname lastname]”
 set a name that is identifiable for credit when review version history
@@ -245,4 +246,8 @@ set automatic command line coloring for Git for e
 git log --follow [file] - show the commits that changed file, even across renames
 
 git diff branchB...branchA - show the diff of what is in branchA that is not in branchB
+
+# git revert <commit> - Create new commit that undoes all of the changes made in <commit>, then apply it to the current branch.
+
+# git reflog --all
 
