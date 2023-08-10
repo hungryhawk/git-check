@@ -12,6 +12,11 @@
 
 # git clone https://github.com/libgit2/libgit2 - клонировать репозиторий
 
+# git checkout README.md - откатиться к изменениям последнего коммита (если мы просто изменили файл)
+
+# git restore --staged README.md - откатиться к фазе modified (красным цветом) (если мы нажали git add README.md) а затем можем прописать git checkout README.md
+
+
 
 
 # git branch -v - посмотреть последний коммит в ветке
