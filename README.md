@@ -253,7 +253,5 @@ git diff branchB...branchA - show the diff of what is in branchA that is not in 
 
 # git reflog --all
 
-
-
-dkjvbd;jfv;dfjkfnls'nf'lskf'lsnd'lkfsdkf
+git reset --hard - Reset staging area and working directory to match most recent commit and overwrites all changes in the working directory.
 
