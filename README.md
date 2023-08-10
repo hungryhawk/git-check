@@ -75,3 +75,8 @@
 # git diff --staged / git diff --cached - показать подробнее какие произошли изменения (c добавления git add .)
 
 # git commit -a -m 'new message' - две команды в одной git add . + git commit -m 'new message'
+
+когда мы хотим удалить файл
+# rm script.js - когда он не проиндексирован (без git add script.js)
+
+# git restore --staged script.js => rm script.js - когда он был проиндексирован (с git add script.js)
