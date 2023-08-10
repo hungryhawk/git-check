@@ -80,3 +80,6 @@
 # rm script.js - когда он не проиндексирован (без git add script.js)
 
 # git restore --staged script.js => rm script.js - когда он был проиндексирован (с git add script.js)
+
+# git log -p -1 - посмотреть изменени, которые были сделаны в прошлом коммите
+
