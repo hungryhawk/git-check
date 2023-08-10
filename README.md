@@ -133,10 +133,45 @@ b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unbor
 
 # git tag -a v1.4 -m "my version 1.4" - создать tag 
 
+Обмен тегами
+По умолчанию, команда git push не отправляет теги на удалённые сервера. После создания теги нужно отправлять явно на удалённый сервер. Процесс аналогичен отправке веток — достаточно выполнить команду git push origin <tagname>.
+
+$ git push origin v1.5
+Counting objects: 14, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 2.05 KiB | 0 bytes/s, done.
+Total 14 (delta 3), reused 0 (delta 0)
+To git@github.com:schacon/simplegit.git
+ * [new tag]         v1.5 -> v1.5
+Если у вас много тегов, и вам хотелось бы отправить все за один раз, то можно использовать опцию --tags для команды git push. В таком случае все ваши теги отправятся на удалённый сервер (если только их уже там нет).
+
+$ git push origin --tags
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 160 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To git@github.com:schacon/simplegit.git
+ * [new tag]         v1.4 -> v1.4
+ * [new tag]         v1.4-lw -> v1.4-lw
+Теперь, если кто-то клонирует (clone) или выполнит git pull из вашего репозитория, то он получит вдобавок к остальному и ваши метки.
+
 # git show v1.4 - посмотреть данные о теге
 
 # git tag -a v1.2 -m 'add new tag' 12130cf - создать тег на определенном коммите
 
 # git tag -d v1.2 - удалить определенный тег по названию 
+
+Обратите внимание, что при удалении тега не происходит его удаления с внешних серверов. Существует два способа изъятия тега из внешнего репозитория.
+
+Первый способ — это выполнить команду git push <remote> :refs/tags/<tagname>:
+
+$ git push origin :refs/tags/v1.4-lw
+To /git@github.com:schacon/simplegit.git
+ - [deleted]         v1.4-lw
+Это следует понимать как обновление внешнего тега пустым значением, что приводит к его удалению.
+
+Второй способ убрать тег из внешнего репозитория более интуитивный:
+
+$ git push origin --delete <tagname>
 
 
