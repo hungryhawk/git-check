@@ -15,6 +15,8 @@
 # git checkout README.md - откатиться к изменениям последнего коммита (если мы просто изменили файл)
 
 # git restore --staged README.md - откатиться к фазе modified (красным цветом) (если мы нажали git add README.md) а затем можем прописать git checkout README.md
+# git reset === равно верхнему случаю
+
 
 # git branch -v - посмотреть последний коммит в ветке
 
@@ -250,4 +252,8 @@ git diff branchB...branchA - show the diff of what is in branchA that is not in 
 # git revert <commit> - Create new commit that undoes all of the changes made in <commit>, then apply it to the current branch.
 
 # git reflog --all
+
+
+
+dkjvbd;jfv;dfjkfnls'nf'lskf'lsnd'lkfsdkf
 
