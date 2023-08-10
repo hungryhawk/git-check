@@ -370,8 +370,38 @@ If you want to delete all the stashes, simply use:
 
 git stash clear
 
-svjsdsdjvlsdnv
-sdvljsdv'jsdnl
-dsvlknsd'klv
-sdv'klnds'klv
+sgit cherry-pick
+Choosing a commit from one branch and applying it to another is known as cherry picking in Git. Following are the steps to cherry pick a commit:
 
+Visit the branch you want to apply to commit and use the following command:
+git switch master
+Run the following command:
+git cherry-pick <commit_id
+
+You can also add a message to the stash.
+git stash save "<message>"
+
+git branch -c new - можно скопировать ветку и назвать идентичную new 
+
+
+Git Clone Commands
+git clone <repository-url> – Clone a specified remote repository. See Git-SCM’s best practices for remote URL format.
+git clone <repository-url> <directory-name> – Clone a repository and name the local directory.
+git clone <repository-url> --origin <name> – Clone a repository and name the remote (<name>). If you do not wish to name the remote, Git will provide the default name origin.
+git clone <repository-url> --branch <branch-name> – Clone a repository and checkout the specific branch. 
+git clone <repository-url> --depth <depth> – Clone a repository with a specified number of commits (<depth>). 
+git clone <repository-url> --no-tags – Clone a repository without copying the repo’s tags.
+
+
+Git Merge Commands
+git merge – Combine two or more development histories together. Used in combination with fetch, this will combine the fetched history from a remote branch into the currently checked out local branch.
+git merge <branch-name> – Merge changes from one branch into the branch you currently have checked out.
+git merge --abort – Aborts the merge process and restores the project’s state to before the merge was attempted. This works as a failsafe when a conflict occurs.
+git merge --continue – Attempt to complete a merge that was stopped due to file conflicts after resolving the merge conflict.
+git merge --squash – Combine all changes from the branch being merged into a single commit rather than preserving them as individual commits.
+git merge --no-commit – Combine branch into the current branch, but do not make a new commit.
+git merge --no-ff – Creates a merge commit instead of attempting a fast-forward.
+
+Добавляет немного цвета в вывод команды git
+
+git config --global color.ui auto
